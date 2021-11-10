@@ -6,7 +6,7 @@
 我的实现：
   对于 employee （基于 @query）：
     localhost:8080/employee 
-    如果是get，会返回 db 里面所有的 employee 的 name, salary, department （这里我用了 DTO，解决了 json 死循环问题，没有使用 jsonignore）
+    如果是get，会返回 db 里面所有的 employee 的 name, salary, department （这里我用了 DTO，解决了 json 死循环问题）
     如果是post，需要在 request body 里传入 firstName, lastName, salary。会在 employee 表中生成一条新的信息
     
     localhost:8080/employee/{id}
@@ -14,8 +14,9 @@
   
   对于 department （基于 EntityManager）：
     localhost:8080/department
-    get请求，返回所有的 department （这里没有使用 DTO）
+    get请求，返回所有的 department （时间原因没有实现一个 departmentDTO，所以出现了 json 死循环，使用了 jsonignore 解决了问题）
     
     localhost:8080/department/{id}
     get请求，返回 id 对应的 department (没有 exception)
+  
  
